@@ -1,8 +1,29 @@
-\documentclass[10pt, a5paper]{book}
+\documentclass[12pt,a5paper,pagesize,openright]{book}
 
 \usepackage[magyar]{babel}
+\usepackage{t1enc}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+\usepackage{geometry}
+\usepackage{lipsum}
+\geometry{a5paper}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[RO]{\thepage}
+}
+
+\fancypagestyle{my_fancy}{
+    \fancyhead{}
+    \fancyhead[LE]{\leftmark}
+    \fancyfoot{}
+    \fancyfoot[LE,RO]{\thepage}
+}
+
+\pagestyle{my_fancy}
+
+\renewcommand{\chaptername}{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesubsection\ #1}}
 
 \title{Sikér}
 \author{Nagy Ádám}
@@ -11,11 +32,17 @@
 
 \begin{document}
 
+\frontmatter
 \maketitle
 
+\mainmatter
 \chapter{Sikér}
 \section{Signature pogácsa}
+\lipsum[1-4]
+
 \section{Kifli/perec}
+\lipsum[1-4]
+
 \section{Hamburger buci}
 \section{Wannabe nápolyi pizza}
 \section{Gyúrt tészta}
@@ -24,6 +51,8 @@
 
 \chapter{Főételek}
 \section{Lasagne}
+\lipsum[1-4]
+
 \section{Paprikás csirke}
 \section{Hortobágyi húsos palacsinta}
 
