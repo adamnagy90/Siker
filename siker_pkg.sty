@@ -9,6 +9,7 @@
 
 \geometry{a5paper}
 
+% Fejléc és lábléc
 \fancypagestyle{plain}{
     \fancyhf{}
     \fancyfoot[RO]{\thepage}
@@ -27,5 +28,18 @@
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesubsection\ #1}}
 
+% Felsorolások
 \usepackage{enumitem}
 \setlist[itemize]{topsep=3pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+
+% Hivatkozások
+\usepackage[autostyle]{csquotes}
+\usepackage[
+    backend=biber,
+    style=ieee,
+    natbib=false,
+    url=true,
+    doi=true,
+    eprint=false
+]{biblatex}
+\addbibresource{main.bib}
