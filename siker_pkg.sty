@@ -29,9 +29,11 @@
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesubsection\ #1}}
 
+\usepackage{tikzsymbols}
+
 % Felsorolások
 \usepackage{enumitem}
-\setlist[itemize]{topsep=3pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+\setlist[itemize]{topsep=3pt,itemsep=-1ex,partopsep=1ex,parsep=1ex,label={\rollingpin}}
 
 % Hivatkozások
 \usepackage[autostyle]{csquotes}
