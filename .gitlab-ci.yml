@@ -1,10 +1,10 @@
 variables:
-  LATEX_IMAGE: listx/texlive:2020
+  LATEX_IMAGE: texlive/texlive:latest
 
 build:
   image: $LATEX_IMAGE
   script:
-    - latexmk -bibtex -pdf -pdflatex="pdflatex -interaction=nonstopmode" main.tex
+    - latexmk -bibtex -pdf
 
   artifacts:
     paths:
