@@ -14,7 +14,9 @@
     filecolor=black,
     linkcolor=black,
     urlcolor=black
-}
+    }
+\usepackage{titling}
+\usepackage{emptypage}
 
 \geometry{a5paper}
 
@@ -54,3 +56,22 @@
     eprint=false
 ]{biblatex}
 \addbibresource{main.bib}
+
+% Git commit hash https://gist.github.com/kbjarkefur/88820e5a5365b3f707b6b20aee57cf8a
+% Two required libraries
+\usepackage{xstring}
+\usepackage{catchfile}
+
+% Set user input
+\newcommand{\gitfolder}{.git}             % Relative path to .git folder from .tex file
+\newcommand{\reponame}{adamnagy90/siker}    % Name of account and repo. Will be included in URL
+
+% Based on this https://tex.stackexchange.com/questions/455396/how-to-include-the-current-git-commit-id-and-branch-in-my-document
+\CatchFileDef{\headfull}{\gitfolder/HEAD}{}               % Get path to head file for checked out branch
+\StrGobbleRight{\headfull}{1}[\head]                      % Remove end of line character
+\StrBehind[2]{\head}{/}[\branch]                          % Parse out the path only
+\CatchFileDef{\commit}{\gitfolder/refs/heads/\branch}{}   % Get the content of the branch head
+\StrGobbleRight{\commit}{1}[\commithash]                  % Remove end of line character
+
+% Build the URL to this commit based on the information we now have
+\newcommand{\commiturl}{\url{https://gitlab.com/\reponame/commit/\commithash}}
