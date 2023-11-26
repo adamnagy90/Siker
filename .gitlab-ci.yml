@@ -4,7 +4,11 @@ variables:
 build:
   image: $LATEX_IMAGE
   script:
-    - latexmk -bibtex -pdf
+    - ls
+    - pwd
+    - git status
+    - git rev-parse --short HEAD
+    - latexmk -bibtex -pdf -shell-escape
 
   artifacts:
     paths:
