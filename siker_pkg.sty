@@ -29,6 +29,7 @@
 \fancypagestyle{my_fancy}{
     \fancyhead{}
     \fancyhead[LE]{\leftmark}
+    \fancyhead[RO]{\nouppercase{\rightmark}}
     \fancyfoot{}
     \fancyfoot[LE,RO]{\thepage}
 }
@@ -37,7 +38,6 @@
 
 \renewcommand{\chaptername}{}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesubsection\ #1}}
 
 \usepackage{tikzsymbols}
 
