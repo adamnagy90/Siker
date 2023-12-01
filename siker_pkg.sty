@@ -43,7 +43,6 @@
 
 % Felsorolások
 \usepackage{enumitem}
-\setlist[itemize]{topsep=3pt,itemsep=-1ex,partopsep=1ex,parsep=1ex,label={\rollingpin}}
 
 % Hivatkozások
 \usepackage[autostyle]{csquotes}
@@ -58,3 +57,5 @@
 \addbibresource{main.bib}
 
 \usepackage{gitver}
+
+\newcommand{\fullref}[1]{\ref{#1}. \nameref{#1}}
