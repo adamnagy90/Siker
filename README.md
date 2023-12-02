@@ -4,4 +4,4 @@ Utolsó automatikus build: [![Download PDF](https://img.shields.io/badge/Downloa
 
 Javasolt local build:
 - TeXLive
-- `latexmk -bibtex -pdf`
+- `latexmk -bibtex -pdf -shell-escape`
