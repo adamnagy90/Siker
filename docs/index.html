@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sikér | Legfrissebb PDF</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Georgia, "Times New Roman", serif;
+        background: #f3f1eb;
+        color: #242a24;
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      header {
+        min-height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.6rem 1.25rem;
+        border-bottom: 1px solid #d5d4cb;
+      }
+      h1 { margin: 0; font-size: 1.15rem; font-weight: 600; }
+      a { color: #315d49; }
+      main { height: calc(100dvh - 3.5rem); padding: 0.75rem; }
+      iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 60vh;
+        border: 1px solid #d5d4cb;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sikér</h1>
+      <a href="main.pdf">PDF letöltése</a>
+    </header>
+    <main>
+      <iframe src="main.pdf" title="Sikér - legfrissebb PDF">
+        <p>A PDF nem jeleníthető meg. <a href="main.pdf">Töltsd le a dokumentumot.</a></p>
+      </iframe>
+    </main>
+  </body>
+</html>
