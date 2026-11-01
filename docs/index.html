@@ -57,6 +57,21 @@
         border: 1px solid #d9dcdf;
         background: #fff;
       }
+      .mobile-reader { display: none; }
+      .mobile-open {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3rem;
+        padding: 0.75rem 1.1rem;
+        border: 1px solid #762b38;
+        background: #762b38;
+        color: #fff;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+      .mobile-open:hover { background: #5f202c; border-color: #5f202c; }
+      .mobile-open:focus-visible { outline: 2px solid #191919; outline-offset: 3px; }
       @media (max-width: 520px) {
         header { min-height: 4rem; gap: 0.6rem; }
         .identity { display: block; }
@@ -64,13 +79,22 @@
         .edition { margin-top: 0.25rem; font-size: 0.8rem; }
         .download { padding: 0.55rem 0.65rem; font-size: 0.85rem; }
       }
+      @media (max-width: 900px), (pointer: coarse) {
+        .download, iframe { display: none; }
+        main {
+          display: grid;
+          place-items: center;
+          background: #fff;
+        }
+        .mobile-reader { display: block; }
+      }
     </style>
   </head>
   <body>
     <header>
       <div class="identity">
         <h1>Sikér</h1>
-        <p class="edition">Receptgyűjtemény · PDF</p>
+        <p class="edition">Nagy Ádám</p>
       </div>
       <a class="download" href="main.pdf" download>PDF letöltése</a>
     </header>
@@ -78,6 +102,9 @@
       <iframe src="main.pdf" title="Sikér - latest build">
         <p>A PDF nem jeleníthető meg. <a href="main.pdf">Töltsd le a dokumentumot.</a></p>
       </iframe>
+      <div class="mobile-reader">
+        <a class="mobile-open" href="main.pdf" target="_blank" rel="noopener">PDF megnyitása</a>
+      </div>
     </main>
   </body>
 </html>
